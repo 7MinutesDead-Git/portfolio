@@ -17,7 +17,7 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 		wrapperElement.addClass('inactive')
 	}
 
-	await timer(500)
+	await timer(300)
 
 	const sections = document.querySelectorAll('.gtr-uniform section')
 	for (const child of sections) {
@@ -30,10 +30,12 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 	}
 }
 
+// ----------------------------------------------------------------------------------------------------
+// HTML5UP jQuery stuff.
 
 // ----------------------------------------------------------------------------------------------------
 (function($) {
-	var	$window = $(window),
+	const $window = $(window),
 		$body = $('body');
 
 	// Breakpoints.
@@ -58,7 +60,7 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 
 	// Scrolly links.
 	$('.scrolly').scrolly({
-		speed: 2000
+		speed: 2300
 	});
 
 	// Dropdowns.
@@ -109,17 +111,14 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 					$this.css('background-position', 'center 0px');
 
 					$window.on('scroll._parallax', function() {
-						var pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
-						$this.css('background-position', 'center ' + (pos * -0.15) + 'px');
+						const pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
+						$this.css('background-position', 'center ' + (pos * -0.2) + 'px');
 					});
 				};
 
 				off = function() {
 					$this.css('background-position', '');
-
-					$window
-						.off('scroll._parallax');
-
+					$window.off('scroll._parallax');
 				};
 
 				breakpoints.on('<=medium', off);

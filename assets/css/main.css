@@ -111,18 +111,18 @@ input, select, textarea {
 		-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #7236ff;
+		color: #32a879;
 		text-decoration: none;
 	}
 
 		a:hover {
-			color: #7236ff !important;
+			color: #32a879 !important;
 			border-bottom-color: transparent;
 		}
 
 	strong, b {
-		color: #7236ff;
-		font-weight: 300;
+		color: #32a879;
+		font-weight: 500;
 	}
 
 	em, i {
@@ -2169,7 +2169,7 @@ input, select, textarea {
 	header h3 + p {
 		font-size: 1.1em;
 		margin-top: -0.8em;
-		line-height: 1.75em;
+		line-height: 1.55em;
 	}
 
 	header h4 + p,
@@ -2187,10 +2187,10 @@ input, select, textarea {
 	}
 
 		header.major:after {
-			background: #7236ff;
+			background: #32a879;
 			content: '';
 			display: inline-block;
-			height: 0.2em;
+			height: 0.1em;
 			max-width: 20em;
 			width: 75%;
 		}
@@ -2209,6 +2209,11 @@ input, select, textarea {
 			max-width: 35em;
 			margin-left: auto;
 			margin-right: auto;
+			display: flex;
+			flex-direction: column;
+		}
+		.form-name-email {
+			display: flex;
 		}
 
 	label {
@@ -2256,7 +2261,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #7236ff;
+			border-color: #32a879;
 		}
 
 	select {
@@ -2359,7 +2364,7 @@ input, select, textarea {
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #7236ff;
+			border-color: #32a879;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2417,7 +2422,11 @@ input, select, textarea {
 		text-decoration: none;
 		border-bottom: none;
 		position: relative;
+		transition: all 0.3s ease-in-out;
 	}
+		.icon.brands:hover {
+			filter: sepia(1) hue-rotate(150deg) brightness(1.2);
+		}
 
 		.icon:before {
 			-moz-osx-font-smoothing: grayscale;
@@ -2856,8 +2865,8 @@ input, select, textarea {
 		input[type="button"]:active,
 		.button:hover,
 		.button:active {
-			box-shadow: inset 0 0 0 1px #7236ff;
-			color: #7236ff !important;
+			box-shadow: inset 0 0 0 1px #32a879;
+			color: #32a879 !important;
 		}
 
 		input[type="submit"]:active,
@@ -2899,7 +2908,7 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #7236ff;
+			background-color: #32a879;
 			box-shadow: none;
 			color: #ffffff !important;
 		}
@@ -3140,7 +3149,7 @@ input, select, textarea {
 		}
 
 		.spotlight.style1 .content {
-			border-color: #7236ff;
+			border-color: #32a879;
 		}
 
 		.spotlight.style2 .content {
@@ -3202,7 +3211,7 @@ input, select, textarea {
 	}
 
 		.wrapper.style2 {
-			background: #7236ff;
+			background: #32a879;
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
@@ -3237,7 +3246,7 @@ input, select, textarea {
 			.wrapper.style2 input[type="button"].primary,
 			.wrapper.style2 .button.primary {
 				background-color: #ffffff;
-				color: #7236ff !important;
+				color: #32a879 !important;
 			}
 
 				.wrapper.style2 input[type="submit"].primary:hover, .wrapper.style2 input[type="submit"].primary:active,
@@ -3337,7 +3346,7 @@ input, select, textarea {
 			}
 
 			.dropotron > li.active > a, .dropotron > li.active > span {
-				color: #7236ff;
+				color: #32a879;
 			}
 
 		.dropotron.level-0 {
@@ -3427,7 +3436,7 @@ input, select, textarea {
 						}
 
 					#header nav ul li.active > a, #header nav ul li.active > span {
-						color: #7236ff;
+						color: #32a879;
 					}
 
 					#header nav ul li > ul {
@@ -3950,7 +3959,7 @@ input, select, textarea {
 					}
 
 					#titleBar .toggle:before {
-						background: #7236ff;
+						background: #32a879;
 						color: rgba(255, 255, 255, 0.5);
 						content: '\f0c9';
 						display: block;
