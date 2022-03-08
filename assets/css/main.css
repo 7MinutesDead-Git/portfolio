@@ -3385,17 +3385,17 @@ input, select, textarea {
 
 		#header h1 {
 			height: inherit;
-			left: 1.25em;
+			left: 3rem;
 			line-height: inherit;
 			margin: 0;
 			position: absolute;
-			top: 0;
+			top: 1rem;
 		}
 
 		#header nav {
 			position: absolute;
-			right: 1em;
-			top: 0;
+			right: 3rem;
+			top: 1rem;
 		}
 
 			#header nav ul {
@@ -3516,12 +3516,13 @@ input, select, textarea {
 				margin-left: 5em;
 				vertical-align: middle;
 				width: 18rem;
+				box-shadow: 0 0 50px 20px rgba(119,51,117,0.41);
 			}
 
 				#banner .content .image img {
 					display: block;
 					width: 100%;
-					transform: translate(0, -4rem);
+					transform: translate(0, -3rem);
 				}
 
 	body.is-touch #banner {
