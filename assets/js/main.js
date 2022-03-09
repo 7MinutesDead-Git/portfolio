@@ -105,7 +105,7 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 	else {
 		$.fn._parallax = function() {
 			$(this).each(function() {
-				var $this = $(this), on, off;
+				let $this = $(this), on, off;
 
 				on = function() {
 					$this.css('background-position', 'center 0px');
@@ -170,9 +170,9 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 				mode:		mode,
 				top:		top,
 				bottom:		bottom,
-				initialize:	function(t) { $this.addClass('inactive'); },
-				terminate:	function(t) { $this.removeClass('inactive'); },
-				enter:		function(t) { $this.removeClass('inactive'); },
+				initialize:	function() { $this.addClass('inactive'); },
+				terminate:	function() { $this.removeClass('inactive'); },
+				enter:		function() { $this.removeClass('inactive'); },
 
 				// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
 				// leave:	function(t) { $this.addClass('inactive'); },
@@ -201,10 +201,10 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 			$this.scrollex({
 				top:		250,
 				bottom:		0,
-				initialize:	function(t) { gradualBlockCascade($this, true, 'initialize') },
-				terminate:	function(t) { gradualBlockCascade($this, false, 'terminate') },
-				enter: function(t) { gradualBlockCascade($this, true, 'enter') },
-				leave: function(t) { gradualBlockCascade($this, false, 'leave') }
+				initialize:	function() { gradualBlockCascade($this, true, 'initialize') },
+				terminate:	function() { gradualBlockCascade($this, false, 'terminate') },
+				enter: function() { gradualBlockCascade($this, true, 'enter') },
+				leave: function() { gradualBlockCascade($this, false, 'leave') }
 			});
 		};
 
