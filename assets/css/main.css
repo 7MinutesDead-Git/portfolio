@@ -2185,7 +2185,6 @@ input, select, textarea {
 		position: relative;
 		text-align: center;
 	}
-
 		header.major:after {
 			background: #32a879;
 			content: '';
@@ -3224,6 +3223,7 @@ input, select, textarea {
 
 			.wrapper.style2 input[type="submit"]:hover, .wrapper.style2 input[type="submit"]:active,
 			.wrapper.style2 input[type="reset"]:hover,
+			.wrapper.style2 input[type="reset"]:hover,
 			.wrapper.style2 input[type="reset"]:active,
 			.wrapper.style2 input[type="button"]:hover,
 			.wrapper.style2 input[type="button"]:active,
@@ -3604,7 +3604,6 @@ input, select, textarea {
 .box > .gtr-uniform {
 	transition: all 0.3s ease-in-out
 }
-
 .box > .gtr-uniform > section {
 	transition: all 0.3s ease-in-out;
 	opacity: 1;
@@ -3612,7 +3611,32 @@ input, select, textarea {
 .box > .gtr-uniform > section.inactive {
 	opacity: 0;
 }
-
+#four {
+	max-height: 100vh;
+}
+#four.resume-bits {
+	min-height: 100vh;
+}
+#four.resume-bits p {
+	line-height: 1.3rem;
+}
+#four > .container {
+	margin-top: 0;
+}
+#four header.major:after {
+	background: #32a879;
+	content: '';
+	display: inline-block;
+	height: 0.1em;
+	max-width: 10em;
+	width: 75%;
+}
+#four .goto-next {
+	position: relative;
+}
+#four.wrapper {
+	padding-top: 3em;
+}
 
 /* -------------------------------------------------------------------------------------------------- */
 /* XLarge */
