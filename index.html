@@ -39,9 +39,9 @@
 								</ul>
 							</li>
 							<li><a href="#four" class="scrolly">Resume</a></li>
-							<li><a href="https://github.com/7MinutesDead-Git" class="scrolly">GitHub</a></li>
+							<li><a href="https://github.com/7MinutesDead-Git" class="scrolly" target="_blank">GitHub</a></li>
 							<li><a href="https://open.spotify.com/artist/6MXp12IK29WvwsSbj5j49p" target="_blank">My Tunes</a></li>
-							<li><a href="#" class="button primary">I Need A Dev</a></li>
+							<li><a href="elements.html" class="button primary">I Need A Dev</a></li>
 						</ul>
 					</nav>
 				</header>
@@ -57,7 +57,7 @@
 									 class="scrolly"
 									 target="_blank"> music.</a><br />
 								Need an <a href="#four" class="scrolly">engineer?</a>
-								Need a <a href="#five" class="scrolly">site?</a> Let me know!
+								Need a <a href="#five" class="scrolly">site or web app?</a> Let me know!
 							</p>
 						</header>
 						<span class="image"><img src="images/pic01.png" alt="" /></span>
@@ -166,20 +166,50 @@
 				</section>
 
 			<!-- Five -->
+
 				<section id="five" class="wrapper style2 special fade">
 					<div class="container">
-						<header>
-							<h2>Need a fullstack app or a website?</h2>
-							<p>Let's talk about what you want to create and see if we're a good fit!</p>
-						</header>
-						<form method="post" action="#" class="cta">
-							<div class="form-name-email">
-								<input type="text" name="name" id="name" placeholder="Your Name" />
-								<input type="email" name="email" id="email" placeholder="Your Email Address" />
-							</div>
-							<textarea name="message" id="message" placeholder="Tell me what you're looking for, or just say hello!"></textarea>
-							<input type="submit" value="Send Message To Alex" class="fit primary" />
-						</form>
+						<section>
+							<header>
+								<h2>Need me as your software engineer?</h2>
+								<p>Let's talk about what you need and see if we're a good fit!</p>
+							</header>
+							<form method="post" action="#">
+								<div class="row gtr-uniform gtr-50">
+									<div class="col-6 col-12-xsmall">
+										<input type="text" name="name" id="name" value="" placeholder="Name" />
+									</div>
+									<div class="col-6 col-12-xsmall">
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
+									</div>
+									<div class="col-12">
+										<select name="category" id="category">
+											<option value="">- What's this about? -</option>
+											<option value="1">Web App or Site</option>
+											<option value="1">Need to Hire Software Engineer</option>
+											<option value="1">Just Saying Hello</option>
+										</select>
+									</div>
+									<div class="col-6 col-12-medium">
+										<input type="checkbox" id="copy" name="copy">
+										<label for="copy">Email me a copy of this message.</label>
+									</div>
+									<div class="col-6 col-12-medium">
+										<input type="checkbox" id="human" name="human" checked>
+										<label for="human">I am definitely not a robot. Trust me.</label>
+									</div>
+									<div class="col-12">
+										<textarea name="message" id="message" placeholder="Tell me some details so we can schedule a time to talk, or just say hello!" rows="6"></textarea>
+									</div>
+									<div class="col-12">
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Cancel / Reset" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
 					</div>
 				</section>
 
