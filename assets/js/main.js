@@ -1,5 +1,8 @@
 // ----------------------------------------------------------------------------------------------------
 // Custom stuff.
+window.onload = function() {
+	//...
+}
 
 // ----------------------------------------------------------------------------------------------------
 // Returns a Promise that resolves after "ms" milliseconds.
@@ -9,7 +12,6 @@ function timer(ms) {
 
 // ----------------------------------------------------------------------------------------------------
 async function gradualBlockCascade(wrapperElement, turnOn, message) {
-	console.log(`Activated by ${message}`)
 	if (turnOn) {
 		// wrapperElement should be a jQuery object (until refactor).
 		wrapperElement.removeClass('inactive')
@@ -60,7 +62,7 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 
 	// Scrolly links.
 	$('.scrolly').scrolly({
-		speed: 2300
+		speed: 4500
 	});
 
 	// Dropdowns.
