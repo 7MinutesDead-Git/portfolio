@@ -148,7 +148,7 @@ input, select, textarea {
 
 	h2 {
 		font-size: 2em;
-		line-height: 1.3rem;
+		line-height: 1.55rem;
 		letter-spacing: -0.025em;
 	}
 
@@ -3525,7 +3525,7 @@ input, select, textarea {
 				margin-left: 5em;
 				vertical-align: middle;
 				width: 18rem;
-				box-shadow: 0 0 50px 20px rgba(119,51,117,0.41);
+				box-shadow: 0 0 50px 20px rgba(50, 168, 121, 0.20);
 			}
 
 				#banner .content .image img {
@@ -3639,6 +3639,18 @@ input, select, textarea {
 }
 #five {
 	padding: 4rem 0;
+}
+.theme-green {
+	color: #39c088 !important;
+	background-color: #39c088 !important;
+}
+.theme-hot {
+	color: #e44c65 !important;
+	background-color: #e44c65 !important;
+}
+.theme-deep {
+	color: #750aff !important;
+	background-color: #750aff !important;
 }
 
 /* -------------------------------------------------------------------------------------------------- */
@@ -3795,6 +3807,10 @@ input, select, textarea {
 
 			#footer {
 				padding: 4.5em 0;
+			}
+
+			.gtr-uniform > section:nth-last-child(3n) {
+				display: none;
 			}
 
 	}
