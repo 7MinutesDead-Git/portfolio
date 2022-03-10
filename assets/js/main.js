@@ -1,5 +1,7 @@
 // ----------------------------------------------------------------------------------------------------
 // Custom stuff.
+const scrollySpeed = 4500
+
 window.onload = function() {
 	//...
 }
@@ -28,7 +30,7 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 		} else {
 			child.classList.add('inactive')
 		}
-		await timer(150)
+		await timer(scrollySpeed / 10)
 	}
 }
 
@@ -62,7 +64,7 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 
 	// Scrolly links.
 	$('.scrolly').scrolly({
-		speed: 4500
+		speed: scrollySpeed
 	});
 
 	// Dropdowns.
