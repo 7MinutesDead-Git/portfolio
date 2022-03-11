@@ -13,7 +13,12 @@ function timer(ms) {
 }
 
 // ----------------------------------------------------------------------------------------------------
-async function gradualBlockCascade(wrapperElement, turnOn, message) {
+/*
+Gradually reveals or hides skill sections within resume wrapper.
+@param {HTMLElement} wrapperElement - The parent wrapper element for the skill section blocks.
+@param {Boolean} turnOn - Whether to turn on or off.
+*/
+async function gradualBlockCascade(wrapperElement, turnOn) {
 	if (turnOn) {
 		// wrapperElement should be a jQuery object (until refactor).
 		wrapperElement.removeClass('inactive')
@@ -205,10 +210,10 @@ async function gradualBlockCascade(wrapperElement, turnOn, message) {
 			$this.scrollex({
 				top:		250,
 				bottom:		0,
-				initialize:	function() { gradualBlockCascade($this, true, 'initialize') },
-				terminate:	function() { gradualBlockCascade($this, false, 'terminate') },
-				enter: function() { gradualBlockCascade($this, true, 'enter') },
-				leave: function() { gradualBlockCascade($this, false, 'leave') }
+				initialize:	function() { gradualBlockCascade($this, true) },
+				terminate:	function() { gradualBlockCascade($this, false) },
+				enter: function() { gradualBlockCascade($this, true) },
+				leave: function() { gradualBlockCascade($this, false) }
 			});
 		};
 
