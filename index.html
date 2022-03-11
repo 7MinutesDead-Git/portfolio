@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Alex Portfolio</title>
 		<meta charset="utf-8" />
@@ -191,13 +191,13 @@
 								<h2>Need me as your software engineer?</h2>
 								<p>Let's talk about what you need and see if we're a good fit!</p>
 							</header>
-							<form method="post" action="#">
+							<form method="post" action="#" name="portfolio-contact-form" data-netlify-recaptcha="true" netlify>
 								<div class="row gtr-uniform gtr-50">
 									<div class="col-6 col-12-xsmall">
-										<input type="text" name="name" id="name" value="" placeholder="Name" />
+										<input type="email" name="email" id="email" value="" placeholder="Email" />
 									</div>
 									<div class="col-6 col-12-xsmall">
-										<input type="email" name="email" id="email" value="" placeholder="Email" />
+										<input type="text" name="name" id="name" value="" placeholder="Name" />
 									</div>
 									<div class="col-12">
 										<select name="category" id="category">
@@ -207,17 +207,14 @@
 											<option value="1">Just Saying Hello</option>
 										</select>
 									</div>
-									<div class="col-6 col-12-medium">
+									<div class="col-4 col-12-medium">
 										<input type="checkbox" id="copy" name="copy">
-										<label for="copy">Email me a copy of this message.</label>
-									</div>
-									<div class="col-6 col-12-medium">
-										<input type="checkbox" id="human" name="human" checked>
-										<label for="human">I am definitely not a robot. Trust me.</label>
+										<label for="copy">Email me a copy of this message</label>
 									</div>
 									<div class="col-12">
 										<textarea name="message" id="message" placeholder="Tell me some details so we can schedule a time to talk, or just say hello!" rows="6"></textarea>
 									</div>
+									<div data-netlify-recaptcha="true"></div>
 									<div class="col-12">
 										<ul class="actions">
 											<li><input type="submit" value="Send Message" class="primary" /></li>
