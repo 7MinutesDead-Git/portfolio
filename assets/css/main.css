@@ -3626,6 +3626,17 @@ input, select, textarea {
 		background: #e44c65;
 	}
 
+.recaptcha-wrapper {
+	box-shadow: 0 0 0 0 #750aff;
+	transition: all 0.3s ease-in-out;
+}
+	.recaptcha-wrapper:active {
+		box-shadow: 0 0 36px -2px #39c088;
+	}
+	.recaptcha-wrapper:hover {
+		box-shadow: 0 0 36px -2px #9f59ff;
+	}
+
 /* -------------------------------------------------------------------------------------------------- */
 /* Themes */
 .theme-green {
