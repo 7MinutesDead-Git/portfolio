@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------------------------------
 // Custom stuff.
-const scrollySpeed = 4500
+const scrollySpeed = 2500
 
 window.onload = function() {
 	//...
