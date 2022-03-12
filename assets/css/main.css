@@ -3626,7 +3626,7 @@ input, select, textarea {
 		background: #e44c65;
 	}
 
-.recaptcha-wrapper {
+#five .recaptcha-wrapper {
 	box-shadow: 0 0 0 0 #750aff;
 	transition: all 0.3s ease-in-out;
 }
