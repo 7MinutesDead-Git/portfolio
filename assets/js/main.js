@@ -208,8 +208,8 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 
 		on = function() {
 			$this.scrollex({
-				top:		250,
-				bottom:		0,
+				top:		'-20vh',
+				bottom:		'-20vh',
 				initialize:	function() { gradualBlockCascade($this, true) },
 				terminate:	function() { gradualBlockCascade($this, false) },
 				enter: function() { gradualBlockCascade($this, true) },
