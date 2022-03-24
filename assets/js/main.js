@@ -3,7 +3,7 @@
 const scrollySpeed = 2500
 let reCAPTCHA
 
-window.onload = function() {
+window.onload = () => {
 	reCAPTCHA = document.querySelector('.recaptcha-wrapper')
 }
 

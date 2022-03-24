@@ -3076,6 +3076,8 @@ input, select, textarea {
 			left: 0;
 			top: 0;
 			width: 100%;
+			opacity: 1;
+			filter: sepia(1) saturate(20) hue-rotate(200deg);
 		}
 
 		.spotlight .image.main {
@@ -3095,7 +3097,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
 			-ms-transition: -ms-transform 1s ease, opacity 1s ease;
 			transition: transform 1s ease, opacity 1s ease;
-			background: rgba(23, 24, 32, 0.70);
+			background: rgba(23, 24, 32, 0.80);
 			border-style: solid;
 			opacity: 1;
 			position: absolute;
@@ -3429,7 +3431,7 @@ input, select, textarea {
 			background-image: -moz-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.7)), url("images/overlay.png");;
 			background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.7)), url("images/overlay.png");;
 			background-image: -ms-linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.7)), url("images/overlay.png");;
-			background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.7)), url("images/overlay.png");;
+			background-image: linear-gradient(top, rgba(23, 24, 32, 0.95), rgba(23, 24, 32, 0.7)), url("images/overlay.png");
 			content: '';
 			display: block;
 			height: 100%;
@@ -3559,8 +3561,13 @@ input, select, textarea {
 .box > .gtr-uniform > section.inactive {
 	opacity: 0;
 }
+/* Gradient over Tempt Salon spread so scrolly button is visible. */
+#two::before {
+	background: linear-gradient(0deg, rgba(26, 28, 36, 0.8), rgba(26, 28, 36, 0) 100%);
+	filter: none;
+}
 #four {
-	max-height: 100vh;
+	max-height: min(100vh, fit-content);
 }
 #four.resume-bits {
 	min-height: 100vh;
@@ -3673,6 +3680,14 @@ input, select, textarea {
 }
 .icon.solid.alt.major:hover {
 	transform: translateY(-5px);
+}
+
+/* "Email me a copy of this message." */
+.row.gtr-uniform.gtr-50 > .col-4.col-12-medium {
+	width: 100%;
+	display: flex;
+	align-self: flex-start;
+	margin-left: 1.1rem
 }
 
 /* -------------------------------------------------------------------------------------------------- */
