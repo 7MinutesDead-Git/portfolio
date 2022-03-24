@@ -113,6 +113,7 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 		}
 	}
 	else {
+		// This is the parallax scrolling effect for the background of each section.
 		$.fn._parallax = function() {
 			$(this).each(function() {
 				let $this = $(this), on, off
@@ -122,7 +123,7 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 
 					$window.on('scroll._parallax', function() {
 						const pos = parseInt($window.scrollTop()) - parseInt($this.position().top)
-						$this.css('background-position', 'center ' + (pos * -0.2) + 'px')
+						$this.css('background-position', `center ${pos * -0.3}px`)
 					})
 				}
 
@@ -206,8 +207,8 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 
 	$wrappers.each(function() {
 		$(this).scrollex({
-			top:		'-20vh',
-			bottom:		'-20vh',
+			top:		'-40vh',
+			bottom:		'-40vh',
 			initialize:	function() { gradualBlockCascade($(this), true) },
 			terminate:	function() { gradualBlockCascade($(this), false) },
 			enter: function() { gradualBlockCascade($(this), true) },
