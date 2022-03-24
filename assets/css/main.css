@@ -3095,7 +3095,7 @@ input, select, textarea {
 			-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
 			-ms-transition: -ms-transform 1s ease, opacity 1s ease;
 			transition: transform 1s ease, opacity 1s ease;
-			background: rgba(23, 24, 32, 0.40);
+			background: rgba(23, 24, 32, 0.70);
 			border-style: solid;
 			opacity: 1;
 			position: absolute;
@@ -3663,6 +3663,17 @@ input, select, textarea {
 	background: url("../../assets/icons/seo.svg");
 	background-size: contain;
 }
+.icon.solid.alt.major.icon-css {
+	background: url("../../assets/icons/css.svg");
+	background-size: contain;
+}
+.icon.solid.alt.major + h3,
+.icon.solid.alt.major + h3 + p {
+	user-select: none;
+}
+.icon.solid.alt.major:hover {
+	transform: translateY(-5px);
+}
 
 /* -------------------------------------------------------------------------------------------------- */
 /* Themes */
@@ -3753,6 +3764,10 @@ input, select, textarea {
 				font-size: 12pt;
 			}
 
+		#four {
+			max-height: fit-content;
+		}
+
 		/* Spotlight */
 
 			.spotlight {
@@ -3835,9 +3850,9 @@ input, select, textarea {
 				padding: 4.5em 0;
 			}
 
-			.gtr-uniform > section:nth-last-child(3n) {
-				display: none;
-			}
+			/*.gtr-uniform > section:nth-last-child(3n) {*/
+			/*	display: none;*/
+			/*}*/
 
 	}
 
