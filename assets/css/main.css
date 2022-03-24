@@ -3568,10 +3568,13 @@ input, select, textarea {
 	min-height: 100vh;
 }
 #four.resume-bits p {
-	line-height: 1.3rem;
+	line-height: 1.5rem;
 }
 #four > .container {
 	margin-top: 0;
+}
+#four header.major {
+	margin: 0 0 2rem 0
 }
 #four header.major:after {
 	background: #32a879;
@@ -3643,31 +3646,41 @@ input, select, textarea {
 
 .icon.solid.alt.major.icon-node {
 	background: url("../../assets/icons/node-js.svg");
-	background-size: contain;
+	/*background-size: contain;*/
 }
 .icon.solid.alt.major.icon-html {
 	background: url("../../assets/icons/html5.svg");
-	background-size: contain;
+	/*background-size: contain;*/
 }
 .icon.solid.alt.major.icon-js {
 	background: url("../../assets/icons/javascript.svg");
-	background-size: contain;
+	/*background-size: contain;*/
 }
 .icon.solid.alt.major.icon-python {
 	background: url("../../assets/icons/python.svg");
-	background-size: contain;
+	/*background-size: contain;*/
 }
 .icon.solid.alt.major.icon-react {
 	background: url("../../assets/icons/react.svg");
-	background-size: contain;
+	/*background-size: contain;*/
 }
 .icon.solid.alt.major.icon-seo {
 	background: url("../../assets/icons/seo.svg");
-	background-size: contain;
+	/*background-size: contain;*/
 }
 .icon.solid.alt.major.icon-css {
 	background: url("../../assets/icons/css.svg");
+	/*background-size: contain;*/
+}
+.icon.solid.alt.major.icon-node,
+.icon.solid.alt.major.icon-html,
+.icon.solid.alt.major.icon-js,
+.icon.solid.alt.major.icon-python,
+.icon.solid.alt.major.icon-react,
+.icon.solid.alt.major.icon-seo,
+.icon.solid.alt.major.icon-css {
 	background-size: contain;
+	filter: saturate(0.5) ;
 }
 .icon.solid.alt.major + h3,
 .icon.solid.alt.major + h3 + p {
@@ -3774,6 +3787,7 @@ input, select, textarea {
 				font-size: 12pt;
 			}
 
+		/* Prevents overflow of skills from resume section, but misaligns scrolly button. */
 		#four {
 			max-height: fit-content;
 		}
@@ -4171,7 +4185,7 @@ input, select, textarea {
 
 /* XSmall */
 
-	@media screen and (max-width: 480px) {
+	@media screen and (max-width: 600px) {
 
 		/* Basic */
 
@@ -4184,13 +4198,15 @@ input, select, textarea {
 			}
 
 		/* Button */
-
-			input[type="submit"],
-			input[type="reset"],
-			input[type="button"],
-			.button {
-				padding: 0;
-			}
+		ul.actions {
+			flex-direction: column;
+		}
+		input[type="submit"],
+		input[type="reset"],
+		input[type="button"] {
+			width: 100%;
+			margin: 0 0 1.5rem 0
+		}
 
 		/* Spotlight */
 
