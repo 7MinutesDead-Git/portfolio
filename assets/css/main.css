@@ -3561,8 +3561,9 @@ input, select, textarea {
 .box > .gtr-uniform > section.inactive {
 	opacity: 0;
 }
-/* Gradient over Tempt Salon spread so scrolly button is visible. */
-#two::before {
+/* Gradient over app spreads so scrolly button is visible. */
+#two::before,
+#three::before {
 	background: linear-gradient(0deg, rgba(26, 28, 36, 0.8), rgba(26, 28, 36, 0) 100%);
 	filter: none;
 }
