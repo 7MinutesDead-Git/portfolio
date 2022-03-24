@@ -2184,14 +2184,16 @@ input, select, textarea {
 		margin: 0 0 4em 0;
 		position: relative;
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
+		/* The line/divider. */
 		header.major:after {
 			background: #32a879;
 			content: '';
-			display: inline-block;
 			height: 0.1em;
-			max-width: 20em;
-			width: 75%;
+			width: 100%;
 		}
 
 	footer.major {
