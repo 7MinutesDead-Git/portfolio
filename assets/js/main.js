@@ -46,7 +46,7 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 // ----------------------------------------------------------------------------------------------------
 (function($) {
 	const $window = $(window),
-		$body = $('body');
+		$body = $('body')
 
 	// Breakpoints.
 	breakpoints({
@@ -55,29 +55,29 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 		medium:   [ '737px',   '980px'  ],
 		small:    [ '481px',   '736px'  ],
 		xsmall:   [ null,      '480px'  ]
-	});
+	})
 
 	// Play initial animations on page load.
 	$window.on('load', function() {
 		window.setTimeout(function() {
-			$body.removeClass('is-preload');
-		}, 100);
-	});
+			$body.removeClass('is-preload')
+		}, 100)
+	})
 
 	// Touch mode.
 	if (browser.mobile)
-		$body.addClass('is-touch');
+		$body.addClass('is-touch')
 
 	// Scrolly links.
 	$('.scrolly').scrolly({
 		speed: scrollySpeed
-	});
+	})
 
 	// Dropdowns.
 	$('#nav > ul').dropotron({
 		alignment: 'right',
 		hideDelay: 350
-	});
+	})
 
 	// Nav Title Bar.
 	$(
@@ -85,7 +85,7 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 			'<a href="#navPanel" class="toggle"></a>' +
 			'<span class="title">' + $('#logo').html() + '</span>' +
 		'</div>'
-	).appendTo($body);
+	).appendTo($body)
 
 	// Nav Panel.
 	$(
@@ -103,76 +103,76 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 			side: 'left',
 			target: $body,
 			visibleClass: 'navPanel-visible'
-	});
+	})
 
 	// Parallax.
 	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
 	if (browser.name === 'ie' || browser.mobile) {
 		$.fn._parallax = function() {
-			return $(this);
-		};
+			return $(this)
+		}
 	}
 	else {
 		$.fn._parallax = function() {
 			$(this).each(function() {
-				let $this = $(this), on, off;
+				let $this = $(this), on, off
 
 				on = function() {
-					$this.css('background-position', 'center 0px');
+					$this.css('background-position', 'center 0px')
 
 					$window.on('scroll._parallax', function() {
-						const pos = parseInt($window.scrollTop()) - parseInt($this.position().top);
-						$this.css('background-position', 'center ' + (pos * -0.2) + 'px');
-					});
-				};
+						const pos = parseInt($window.scrollTop()) - parseInt($this.position().top)
+						$this.css('background-position', 'center ' + (pos * -0.2) + 'px')
+					})
+				}
 
 				off = function() {
-					$this.css('background-position', '');
-					$window.off('scroll._parallax');
-				};
+					$this.css('background-position', '')
+					$window.off('scroll._parallax')
+				}
 
-				breakpoints.on('<=medium', off);
-				breakpoints.on('>medium', on);
+				breakpoints.on('<=medium', off)
+				breakpoints.on('>medium', on)
 
-			});
+			})
 
-			return $(this);
+			return $(this)
 
-		};
+		}
 
 		$window
 			.on('load resize', function() {
-				$window.trigger('scroll');
-			});
+				$window.trigger('scroll')
+			})
 
 	}
 
 	// Spotlights.
-	const $spotlights = $('.spotlight');
+	const $spotlights = $('.spotlight')
 
 	$spotlights._parallax().each(function() {
-		let $this = $(this), on, off;
+		let $this = $(this), on, off
 
 		on = function() {
-			let top, bottom, mode;
+			let top, bottom, mode
 			// Use main <img>'s src as this spotlight's background.
-			$this.css('background-image', `url("${$this.find('.image.main > img').attr('src')}")`);
+			$this.css('background-image', `url("${$this.find('.image.main > img').attr('src')}")`)
 
 			// Side-specific scrollex tweaks.
 			if ($this.hasClass('top')) {
-				mode = 'top';
-				top = '-20%';
-				bottom = 0;
+				mode = 'top'
+				top = '-20%'
+				bottom = 0
 			}
 			else if ($this.hasClass('bottom')) {
-				mode = 'bottom-only';
-				top = 0;
-				bottom = '20%';
+				mode = 'bottom-only'
+				top = 0
+				bottom = '20%'
 			}
 			else {
-				mode = 'middle';
-				top = 0;
-				bottom = 0;
+				mode = 'middle'
+				top = 0
+				bottom = 0
 			}
 
 			// Add scrollex.
@@ -180,54 +180,43 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 				mode:		mode,
 				top:		top,
 				bottom:		bottom,
-				initialize:	function() { $this.addClass('inactive'); },
-				terminate:	function() { $this.removeClass('inactive'); },
-				enter:		function() { $this.removeClass('inactive'); },
+				initialize:	function() { $this.addClass('inactive') },
+				terminate:	function() { $this.removeClass('inactive') },
+				enter:		function() { $this.removeClass('inactive') },
 
 				// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
-				// leave:	function(t) { $this.addClass('inactive'); },
+				// leave:	function(t) { $this.addClass('inactive') },
 
-			});
-		};
+			})
+		}
 
 		off = function() {
 			// Clear spotlight's background.
-			$this.css('background-image', '');
+			$this.css('background-image', '')
 			// Remove scrollex.
-			$this.unscrollex();
-		};
+			$this.unscrollex()
+		}
 
-		breakpoints.on('<=medium', off);
-		breakpoints.on('>medium', on);
-	});
+		breakpoints.on('<=medium', off)
+		breakpoints.on('>medium', on)
+	})
 
 	// Wrappers.
-	const $wrappers = $('.wrapper');
+	const $wrappers = $('.wrapper')
 
 	$wrappers.each(function() {
-		let $this = $(this), on, off;
-
-		on = function() {
-			$this.scrollex({
-				top:		'-20vh',
-				bottom:		'-20vh',
-				initialize:	function() { gradualBlockCascade($this, true) },
-				terminate:	function() { gradualBlockCascade($this, false) },
-				enter: function() { gradualBlockCascade($this, true) },
-				leave: function() { gradualBlockCascade($this, false) }
-			});
-		};
-
-		off = function() {
-			$this.unscrollex();
-		};
-
-		breakpoints.on('<=medium', off);
-		breakpoints.on('>medium', on);
-	});
+		$(this).scrollex({
+			top:		'-20vh',
+			bottom:		'-20vh',
+			initialize:	function() { gradualBlockCascade($(this), true) },
+			terminate:	function() { gradualBlockCascade($(this), false) },
+			enter: function() { gradualBlockCascade($(this), true) },
+			leave: function() { gradualBlockCascade($(this), false) }
+		})
+	})
 
 	// Banner.
-	const $banner = $('#banner');
-	$banner._parallax();
+	const $banner = $('#banner')
+	$banner._parallax()
 
-})(jQuery);
+})(jQuery)
