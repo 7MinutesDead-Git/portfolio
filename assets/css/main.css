@@ -3555,6 +3555,20 @@ input, select, textarea {
 .box > .gtr-uniform > section.inactive {
 	opacity: 0;
 }
+
+.spotlight p {
+	transition: all 2s ease;
+	user-select: none;
+}
+
+	.spotlight p.inactive {
+		opacity: 0;
+		-moz-transform: translate(0,1.5em);
+		-webkit-transform: translate(0,1.5em);
+		-ms-transform: translate(0,1.5em);
+		transform: translate(0,1.5em);
+	}
+
 /* Gradient over app spreads so scrolly button is visible. */
 #two::before,
 #three::before {
@@ -3587,7 +3601,7 @@ input, select, textarea {
 	transition: all 0.2s ease;
 }
 	#four header.major:hover:after {
-		max-width: 21%;
+		max-width: 11%;
 	}
 #four .goto-next {
 	position: relative;

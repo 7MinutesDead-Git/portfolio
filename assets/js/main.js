@@ -19,7 +19,7 @@ Gradually reveals or hides skill sections within resume wrapper.
 @param {HTMLElement} wrapperElement - The parent wrapper element for the skill section blocks.
 @param {Boolean} turnOn - Whether to turn on or off.
 */
-async function gradualBlockCascade(wrapperElement, turnOn) {
+async function skillsCascade(wrapperElement, turnOn) {
 	if (turnOn) {
 		// wrapperElement should be a jQuery object (until refactor).
 		wrapperElement.removeClass('inactive')
@@ -29,7 +29,7 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 
 	await timer(300)
 
-	const sections = document.querySelectorAll('.gtr-uniform section')
+	const sections = document.querySelectorAll('#four .gtr-uniform section')
 	for (const child of sections) {
 		if (turnOn) {
 			child.classList.remove('inactive')
@@ -40,6 +40,37 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 	}
 }
 
+let firstLoad = true
+async function spotlightCascade(spotlight, turnOn) {
+	if (turnOn) {
+		// spotlight should be a jQuery object (until refactor).
+		spotlight.removeClass('inactive')
+	} else {
+		spotlight.addClass('inactive')
+	}
+
+	// Remove slow transitions on initial page load so we don't get weird
+	// leftover animations if the person starts scrolling quickly.
+	if (!firstLoad)
+		await timer(200)
+
+	// https://stackoverflow.com/a/306904/13627106
+	// Since each section shares the same class "spotlight", we want to only select
+	// the paragraphs within the spotlight we just scrolled into.
+	// We can do that with jQuery since the original script below uses a jQuery object anyway.
+	const paragraphs = spotlight.find("p")
+	for (const p of paragraphs) {
+		if (turnOn) {
+			p.classList.remove('inactive')
+		} else {
+			p.classList.add('inactive')
+		}
+		if (!firstLoad)
+			await timer(scrollySpeed / 5)
+	}
+	firstLoad = false
+
+}
 // ----------------------------------------------------------------------------------------------------
 // HTML5UP jQuery stuff.
 
@@ -181,10 +212,9 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 				mode:		mode,
 				top:		top,
 				bottom:		bottom,
-				initialize:	function() { $this.addClass('inactive') },
-				terminate:	function() { $this.removeClass('inactive') },
-				enter:		function() { $this.removeClass('inactive') },
-
+				initialize:	function() { spotlightCascade($(this), false) },
+				terminate:	function() { spotlightCascade($(this), false) },
+				enter: function() { spotlightCascade($(this), true) },
 				// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
 				// leave:	function(t) { $this.addClass('inactive') },
 
@@ -205,14 +235,16 @@ async function gradualBlockCascade(wrapperElement, turnOn) {
 	// Wrappers.
 	const $wrappers = $('.wrapper')
 
+	//Scroll effects for the skills section.
 	$wrappers.each(function() {
 		$(this).scrollex({
-			top:		'-40vh',
+			top:		'20vh',
 			bottom:		'-40vh',
-			initialize:	function() { gradualBlockCascade($(this), true) },
-			terminate:	function() { gradualBlockCascade($(this), false) },
-			enter: function() { gradualBlockCascade($(this), true) },
-			leave: function() { gradualBlockCascade($(this), false) }
+			initialize:	function() { skillsCascade($(this), false) },
+			terminate:	function() { skillsCascade($(this), false) },
+			enter: function() { skillsCascade($(this), true) },
+			// Uncomment the line below to "rewind" when this spotlight scrolls out of view.
+			// leave: function() { skillsCascade($(this), false) }
 		})
 	})
 
