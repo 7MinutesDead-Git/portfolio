@@ -20,34 +20,21 @@ Gradually reveals or hides skill sections within resume wrapper.
 @param {Boolean} turnOn - Whether to turn on or off.
 */
 async function skillsCascade(wrapperElement, turnOn) {
-	if (turnOn) {
-		// wrapperElement should be a jQuery object (until refactor).
-		wrapperElement.removeClass('inactive')
-	} else {
-		wrapperElement.addClass('inactive')
-	}
-
+	// wrapperElement should be a jQuery object (until refactor).
+	turnOn ? wrapperElement.removeClass('inactive') : wrapperElement.addClass('inactive')
 	await timer(300)
 
 	const sections = document.querySelectorAll('#four .gtr-uniform section')
 	for (const child of sections) {
-		if (turnOn) {
-			child.classList.remove('inactive')
-		} else {
-			child.classList.add('inactive')
-		}
+		turnOn ? child.classList.remove('inactive') : child.classList.add('inactive')
 		await timer(scrollySpeed / 10)
 	}
 }
 
 let firstLoad = true
 async function spotlightCascade(spotlight, turnOn) {
-	if (turnOn) {
-		// spotlight should be a jQuery object (until refactor).
-		spotlight.removeClass('inactive')
-	} else {
-		spotlight.addClass('inactive')
-	}
+	// Spotlight should be a jQuery object (until refactor).
+	turnOn ? spotlight.removeClass('inactive') : spotlight.addClass('inactive')
 
 	// Remove slow transitions on initial page load so we don't get weird
 	// leftover animations if the person starts scrolling quickly.
@@ -60,11 +47,7 @@ async function spotlightCascade(spotlight, turnOn) {
 	// We can do that with jQuery since the original script below uses a jQuery object anyway.
 	const paragraphs = spotlight.find("p")
 	for (const p of paragraphs) {
-		if (turnOn) {
-			p.classList.remove('inactive')
-		} else {
-			p.classList.add('inactive')
-		}
+		turnOn ? p.classList.remove('inactive') : p.classList.add('inactive')
 		if (!firstLoad)
 			await timer(scrollySpeed / 5)
 	}
