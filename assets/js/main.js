@@ -35,12 +35,10 @@ let firstLoad = true
 async function spotlightCascade(spotlight, turnOn) {
 	// Spotlight should be a jQuery object (until refactor).
 	turnOn ? spotlight.removeClass('inactive') : spotlight.addClass('inactive')
-
 	// Remove slow transitions on initial page load so we don't get weird
 	// leftover animations if the person starts scrolling quickly.
 	if (!firstLoad)
 		await timer(200)
-
 	// https://stackoverflow.com/a/306904/13627106
 	// Since each section shares the same class "spotlight", we want to only select
 	// the paragraphs within the spotlight we just scrolled into.
