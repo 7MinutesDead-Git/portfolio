@@ -43,6 +43,7 @@ async function skillsCascade(wrapperElement, turnOn) {
 	}
 }
 
+// ----------------------------------------------------------------------------------------------------
 let firstLoad = true
 async function spotlightCascade(spotlight, turnOn) {
 	// Spotlight should be a jQuery object (until refactor).
@@ -65,6 +66,7 @@ async function spotlightCascade(spotlight, turnOn) {
 
 }
 
+// ----------------------------------------------------------------------------------------------------
 function setupContactFormStorage() {
 	// Check local storage for previous form data, and setup input listeners for storing new data.
 	for (const contactInput of contactForm)  {
@@ -77,12 +79,14 @@ function setupContactFormStorage() {
 	}
 }
 
+// ----------------------------------------------------------------------------------------------------
 function clearFormStorage() {
 	for (const contactInput of contactForm)
 		if (localStorage.getItem(contactInput.id))
 			localStorage.setItem(contactInput.id, '')
 }
 
+// ----------------------------------------------------------------------------------------------------
 function setupButtonEvents() {
 	const contactForm = document.querySelector('.contact-form')
 	const closeContactConfirm = document.querySelector('.button-close-contact-success')
@@ -100,6 +104,7 @@ function setupButtonEvents() {
 	})
 }
 
+// ----------------------------------------------------------------------------------------------------
 function toggleFormSubmitConfirm() {
 	const confirmationOverlay = document.querySelector('.contact-success')
 	confirmationOverlay.classList.toggle('inactive')
