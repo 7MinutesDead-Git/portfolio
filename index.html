@@ -9,6 +9,13 @@
 	</head>
 
 	<body class="is-preload landing">
+		<section class="contact-success inactive">
+			<div class="contact-success-internal">
+				<h2>Message sent!</h2>
+				<p>I'll reach out to you quickly!</p>
+				<button class="button primary button-close-contact-success">OK</button>
+			</div>
+		</section>
 		<div id="page-wrapper">
 
 			<!-- Navigation -->
@@ -182,7 +189,7 @@
 								<h2>Need me as your software engineer?</h2>
 								<p>Let's talk about what you need and see if we're a good fit!</p>
 							</header>
-							<form data-netlify="true" method="post" action="#five" name="portfolio-contact-form" data-netlify-recaptcha="true">
+							<form data-netlify="true" method="post" action="#five" name="portfolio-contact-form" data-netlify-recaptcha="true" class="contact-form">
 								<div class="row gtr-uniform gtr-50">
 									<div class="col-6 col-12-xsmall">
 										<input type="email" name="email" id="email" value="" placeholder="Email" />
@@ -208,8 +215,8 @@
 									<div data-netlify-recaptcha="true" class="recaptcha-wrapper"></div>
 									<div class="col-12">
 										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Cancel / Reset" /></li>
+											<li><input type="submit" value="Send Message" class="primary button-form-submit" /></li>
+											<li><input type="reset" value="Cancel / Reset" class="button-form-reset"/></li>
 										</ul>
 									</div>
 								</div>
