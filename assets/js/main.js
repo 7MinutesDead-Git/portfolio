@@ -3,9 +3,21 @@
 const scrollySpeed = 2500
 let reCAPTCHA
 
+window.addEventListener("DOMContentLoaded", (e) => {
+	setupContactFormStorage()
+	setupButtonEvents()
+})
+
+// reCAPTCHA may not load in before everything else is loaded.
 window.onload = () => {
 	reCAPTCHA = document.querySelector('.recaptcha-wrapper')
 }
+
+const contactEmail = document.querySelector('#email')
+const contactName = document.querySelector('#name')
+const contactCategory = document.querySelector('#category')
+const contactMessage = document.querySelector('#message')
+const contactForm = [contactEmail, contactName, contactCategory, contactMessage]
 
 // ----------------------------------------------------------------------------------------------------
 // Returns a Promise that resolves after "ms" milliseconds.
@@ -52,6 +64,52 @@ async function spotlightCascade(spotlight, turnOn) {
 	firstLoad = false
 
 }
+
+function setupContactFormStorage() {
+	// Check local storage for previous form data, and setup input listeners for storing new data.
+	for (const contactInput of contactForm)  {
+		if (localStorage.getItem(contactInput.id)) {
+			contactInput.value = localStorage.getItem(contactInput.id)
+		}
+		contactInput.addEventListener('input', () => {
+			localStorage.setItem(contactInput.id, contactInput.value)
+		})
+	}
+}
+
+function clearForm() {
+	for (const contactInput of contactForm) {
+		if (localStorage.getItem(contactInput.id)) {
+			localStorage.setItem(contactInput.id, '')
+			contactInput.value = ''
+		}
+	}
+}
+
+function setupButtonEvents() {
+	const contactForm = document.querySelector('.contact-form')
+	const closeContactConfirm = document.querySelector('.button-close-contact-success')
+
+	contactForm.addEventListener('submit', (e) => {
+		e.preventDefault()
+		toggleFormSubmitConfirm()
+		clearForm()
+	})
+	contactForm.addEventListener('invalid', (e) => {
+		console.log('Invalid form submission: ', e)
+	})
+
+	closeContactConfirm.addEventListener('click', () => {
+		toggleFormSubmitConfirm()
+	})
+}
+
+function toggleFormSubmitConfirm() {
+	const confirmationOverlay = document.querySelector('.contact-success')
+	confirmationOverlay.classList.toggle('inactive')
+	console.log('Confirm dialogue toggled.')
+}
+
 // ----------------------------------------------------------------------------------------------------
 // HTML5UP jQuery stuff.
 
