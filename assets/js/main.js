@@ -77,13 +77,10 @@ function setupContactFormStorage() {
 	}
 }
 
-function clearForm() {
-	for (const contactInput of contactForm) {
-		if (localStorage.getItem(contactInput.id)) {
+function clearFormStorage() {
+	for (const contactInput of contactForm)
+		if (localStorage.getItem(contactInput.id))
 			localStorage.setItem(contactInput.id, '')
-			contactInput.value = ''
-		}
-	}
 }
 
 function setupButtonEvents() {
@@ -92,7 +89,7 @@ function setupButtonEvents() {
 
 	contactForm.addEventListener('submit', (e) => {
 		toggleFormSubmitConfirm()
-		clearForm()
+		clearFormStorage()
 	})
 	contactForm.addEventListener('invalid', (e) => {
 		console.log('Invalid form submission: ', e)
