@@ -91,7 +91,6 @@ function setupButtonEvents() {
 	const closeContactConfirm = document.querySelector('.button-close-contact-success')
 
 	contactForm.addEventListener('submit', (e) => {
-		e.preventDefault()
 		toggleFormSubmitConfirm()
 		clearForm()
 	})
