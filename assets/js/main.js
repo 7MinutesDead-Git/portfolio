@@ -229,9 +229,9 @@ function toggleFormSubmitConfirm() {
 	const $spotlights = $('.spotlight')
 
 	$spotlights._parallax().each(function() {
-		let $this = $(this), on, off
+		let $this = $(this), desktop, mobile
 
-		on = function() {
+		desktop = function() {
 			let top, bottom, mode
 			// Use main <img>'s src as this spotlight's background.
 			$this.css('background-image', `url("${$this.find('.image.main > img').attr('src')}")`)
@@ -267,15 +267,15 @@ function toggleFormSubmitConfirm() {
 			})
 		}
 
-		off = function() {
+		mobile = function() {
 			// Clear spotlight's background.
 			$this.css('background-image', '')
 			// Remove scrollex.
 			$this.unscrollex()
 		}
 
-		breakpoints.on('<=medium', off)
-		breakpoints.on('>medium', on)
+		breakpoints.on('<=medium', mobile)
+		breakpoints.on('>medium', desktop)
 	})
 
 	// Wrappers.
