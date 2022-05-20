@@ -3881,10 +3881,6 @@ input, select, textarea {
 							padding-left: 0;
 						}
 
-				.spotlight .goto-next {
-					display: none;
-				}
-
 		/* Wrapper */
 
 			.wrapper {
@@ -3921,11 +3917,6 @@ input, select, textarea {
 			#footer {
 				padding: 4.5em 0;
 			}
-
-			/*.gtr-uniform > section:nth-last-child(3n) {*/
-			/*	display: none;*/
-			/*}*/
-
 	}
 
 /* Small */
