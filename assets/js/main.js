@@ -177,8 +177,10 @@ function toggleFormSubmitConfirm() {
 	})
 
 	// Parallax.
-	// Disabled on IE (choppy scrolling) and mobile platforms (poor performance).
-	if (browser.name === 'ie' || browser.mobile) {
+	// Disabled on IE (choppy scrolling).
+	// If mobile performance is choppy, consider adding "browser.mobile" as well.
+	// TODO: Disable/enable based on mobile performance breakpoints.
+	if (browser.name === 'ie') {
 		$.fn._parallax = function() {
 			return $(this)
 		}
@@ -187,9 +189,9 @@ function toggleFormSubmitConfirm() {
 		// This is the parallax scrolling effect for the background of each section.
 		$.fn._parallax = function() {
 			$(this).each(function() {
-				let $this = $(this), on, off
+				let $this = $(this), desktop, mobile
 
-				on = function() {
+				desktop = function() {
 					$this.css('background-position', 'center 0px')
 
 					$window.on('scroll._parallax', function() {
@@ -198,13 +200,17 @@ function toggleFormSubmitConfirm() {
 					})
 				}
 
-				off = function() {
-					$this.css('background-position', '')
-					$window.off('scroll._parallax')
+				mobile = function() {
+					$this.css('background-position', 'center 0px')
+
+					$window.on('scroll._parallax', function() {
+						const pos = parseInt($window.scrollTop()) - parseInt($this.position().top)
+						$this.css('background-position', `center ${pos * 0.5}px`)
+					})
 				}
 
-				breakpoints.on('<=medium', off)
-				breakpoints.on('>medium', on)
+				breakpoints.on('<=medium', mobile)
+				breakpoints.on('>medium', desktop)
 
 			})
 

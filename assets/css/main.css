@@ -3843,7 +3843,7 @@ input, select, textarea {
 		/* Spotlight */
 
 			.spotlight {
-				background-attachment: scroll;
+				background-attachment: fixed;
 				height: auto;
 			}
 
