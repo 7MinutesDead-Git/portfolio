@@ -3599,28 +3599,28 @@ input, select, textarea {
 	}
 
 /* Gradient over app spreads so scrolly button is visible. */
-#two::before,
-#three::before {
+#app-one::before,
+#app-two::before {
 	background: linear-gradient(0deg, rgba(26, 28, 36, 0.8), rgba(26, 28, 36, 0) 100%);
 	filter: none;
 }
 /* Resume section. */
-#four {
+#skills {
 	max-height: min(100vh, fit-content);
 }
-#four.resume-bits {
+#skills.resume-bits {
 	min-height: 100vh;
 }
-#four.resume-bits p {
+#skills.resume-bits p {
 	line-height: 1.5rem;
 }
-#four > .container {
+#skills > .container {
 	margin-top: 0;
 }
-#four header.major {
+#skills header.major {
 	margin: 0 0 2rem 0
 }
-#four header.major:after {
+#skills header.major:after {
 	background: #32a879;
 	content: '';
 	display: inline-block;
@@ -3629,59 +3629,59 @@ input, select, textarea {
 	width: 75%;
 	transition: all 0.2s ease;
 }
-	#four header.major:hover:after {
+	#skills header.major:hover:after {
 		max-width: 11%;
 	}
-#four .goto-next {
+#skills .goto-next {
 	position: relative;
 }
-#four.wrapper {
+#skills.wrapper {
 	padding-top: 3em;
 }
 
 /* Contact Form */
-#five {
+#contact {
 	padding: 4rem 0;
 	background: #750aff;
 	font-size: 1.2rem;
 }
 
-#five label[for="human"],
-#five label[for="copy"] {
+#contact label[for="human"],
+#contact label[for="copy"] {
 	line-height: 2.2rem;
 }
 
-#five input,
-#five select,
-#five textarea {
+#contact input,
+#contact select,
+#contact textarea {
 	background: #272833;
 	font-size: 1.05em;
 	border-color: #9f59ff;
 	transition: all 0.3s ease-in-out;
 }
 
-	#five input:focus,
-	#five select:focus,
-	#five textarea:focus {
+	#contact input:focus,
+	#contact select:focus,
+	#contact textarea:focus {
 		background: #181818;
 	}
 
 
-#five input[type="reset"],
-#five input.primary {
+#contact input[type="reset"],
+#contact input.primary {
 	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
-	#five input.primary:hover,
-	#five input[type="reset"]:hover {
+	#contact input.primary:hover,
+	#contact input[type="reset"]:hover {
 		background: #9f59ff;
 		color: white;
 		transform: translateY(-2px);
 	}
-	#five input[type="reset"]:hover {
+	#contact input[type="reset"]:hover {
 		background: #e44c65;
 	}
 
-#five .recaptcha-wrapper {
+#contact .recaptcha-wrapper {
 	box-shadow: 0 0 0 0 #750aff;
 	transition: all 0.3s ease-in-out;
 }
@@ -3836,7 +3836,7 @@ input, select, textarea {
 			}
 
 		/* Prevents overflow of skills from resume section, but misaligns scrolly button. */
-		#four {
+		#skills {
 			max-height: fit-content;
 		}
 

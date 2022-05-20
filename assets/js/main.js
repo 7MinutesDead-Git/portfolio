@@ -36,7 +36,7 @@ async function skillsCascade(wrapperElement, turnOn) {
 	turnOn ? wrapperElement.removeClass('inactive') : wrapperElement.addClass('inactive')
 	await timer(300)
 
-	const sections = document.querySelectorAll('#four .gtr-uniform section')
+	const sections = document.querySelectorAll('#skills .gtr-uniform section')
 	for (const child of sections) {
 		turnOn ? child.classList.remove('inactive') : child.classList.add('inactive')
 		await timer(scrollySpeed / 10)
