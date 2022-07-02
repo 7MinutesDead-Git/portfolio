@@ -208,21 +208,15 @@ function toggleFormSubmitConfirm() {
 						$this.css('background-position', `center ${pos * 0.5}px`)
 					})
 				}
-
 				breakpoints.on('<=medium', mobile)
 				breakpoints.on('>medium', desktop)
-
 			})
-
 			return $(this)
-
 		}
-
 		$window
 			.on('load resize', function() {
 				$window.trigger('scroll')
 			})
-
 	}
 
 	// Spotlights.
