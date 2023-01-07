@@ -3704,6 +3704,10 @@ input, select, textarea {
 	background: url("../../assets/icons/javascript.svg");
 	/*background-size: contain;*/
 }
+.icon.solid.alt.major.icon-ts {
+	background: url("../../assets/icons/typescript.svg");
+	/*background-size: contain;*/
+}
 .icon.solid.alt.major.icon-python {
 	background: url("../../assets/icons/python.svg");
 	/*background-size: contain;*/
@@ -3723,6 +3727,7 @@ input, select, textarea {
 .icon.solid.alt.major.icon-node,
 .icon.solid.alt.major.icon-html,
 .icon.solid.alt.major.icon-js,
+.icon.solid.alt.major.icon-ts,
 .icon.solid.alt.major.icon-python,
 .icon.solid.alt.major.icon-react,
 .icon.solid.alt.major.icon-seo,
