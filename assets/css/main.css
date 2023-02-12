@@ -4265,10 +4265,10 @@ input, select, textarea {
 			display: none;
 		}
 		.goto-next {
-			height: 6rem;
+			height: 4rem;
 		}
 		.content .button {
-			margin: 1em 0 0 0;
+			margin: 0;
 		}
 
 		/* Spotlight */
