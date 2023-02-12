@@ -2929,6 +2929,10 @@ input, select, textarea {
 			opacity: 0.25;
 		}
 
+	.content .button {
+		margin: 3em 0 1em 0;
+	}
+
 /* Goto Next */
 
 	.goto-next {
