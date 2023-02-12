@@ -3895,10 +3895,6 @@ input, select, textarea {
 				background-attachment: scroll;
 			}
 
-				#banner .goto-next {
-					height: 7em;
-				}
-
 				#banner .content {
 					padding: 9em 0;
 					text-align: center;
@@ -3920,8 +3916,6 @@ input, select, textarea {
 				padding: 4.5em 0;
 			}
 	}
-
-/* Small */
 
 	#navPanel, #titleBar {
 		display: none;
