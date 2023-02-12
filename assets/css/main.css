@@ -3630,6 +3630,9 @@ input, select, textarea {
 #skills.wrapper {
 	padding-top: 3em;
 }
+#skills.inactive {
+	display: none;
+}
 
 /* Contact Form */
 #contact {
