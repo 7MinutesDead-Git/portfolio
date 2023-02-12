@@ -2696,7 +2696,7 @@ input, select, textarea {
 				width: 100%;
 			}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 600px) {
 
 			ul.actions:not(.fixed) {
 				-moz-flex-direction: column;
