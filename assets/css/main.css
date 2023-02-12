@@ -4013,7 +4013,7 @@ input, select, textarea {
 			}
 
 				#banner:before {
-					height: calc(100vh - 44px);
+					height: calc(100vh - 20px);
 				}
 
 				#banner .content {
