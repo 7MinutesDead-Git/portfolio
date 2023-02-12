@@ -3900,6 +3900,10 @@ input, select, textarea {
 				background-attachment: scroll;
 			}
 
+			#banner .goto-next {
+				height: 10em;
+			}
+
 				#banner .content {
 					padding: 9em 0;
 					text-align: center;

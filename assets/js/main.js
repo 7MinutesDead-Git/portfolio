@@ -3,9 +3,26 @@
 const scrollySpeed = 2500
 let reCAPTCHA
 
+const spotlights = document.querySelectorAll('.spotlight')
+const banner = document.querySelector('#banner')
+// vh unit doesn't take mobile browser UI elements into account.
+// In this case we'll dynamically set the height of these elements based on
+// the viewport height minus the height of the browser UI elements.
+function setVhStyledElements() {
+	const vh = Math.ceil(window.innerHeight * 0.01)
+	for (const element of spotlights) {
+		element.style.maxHeight = `calc(100vh - ${vh}px)`
+	}
+	banner.style.minHeight = `calc(100vh - ${vh}px)`
+}
+
 window.addEventListener("DOMContentLoaded", (e) => {
 	setupContactFormStorage()
 	setupButtonEvents()
+	setVhStyledElements()
+})
+window.addEventListener("resize", (e) => {
+	setVhStyledElements()
 })
 
 // reCAPTCHA may not load in before everything else is loaded.
