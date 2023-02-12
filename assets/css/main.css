@@ -3930,8 +3930,14 @@ input, select, textarea {
 		display: none;
 	}
 
-/* Small */
+	@media screen and (max-width: 780px) {
+		#blurb p:nth-child(2) {
+			display: none;
+		}
+	}
 
+/* Small */
+/* This is where the mobile nav bar starts showing up. */
 	@media screen and (max-width: 736px) {
 
 		/* Basic */
@@ -4265,7 +4271,6 @@ input, select, textarea {
 			max-height: 30vh;
 		}
 		/* Hide paragraphs on very small displays for limited space */
-		#blurb p:nth-child(2),
 		#app-one p:nth-child(3) {
 			display: none;
 		}
