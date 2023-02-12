@@ -3642,7 +3642,8 @@ input, select, textarea {
 }
 
 #contact label[for="human"],
-#contact label[for="copy"] {
+#contact label[for="copy"],
+#contact label[for="resume"] {
 	line-height: 2.2rem;
 }
 
