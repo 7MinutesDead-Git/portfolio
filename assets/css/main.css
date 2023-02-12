@@ -3822,6 +3822,7 @@ input, select, textarea {
 	}
 
 /* Medium */
+/* This is the biggest transition down to mobile displays. */
 
 	@media screen and (max-width: 980px) {
 
@@ -3834,6 +3835,10 @@ input, select, textarea {
 		/* Prevents overflow of skills from resume section, but misaligns scrolly button. */
 		#skills {
 			max-height: fit-content;
+		}
+
+		.goto-next {
+			height: 10em;
 		}
 
 		/* Spotlight */
