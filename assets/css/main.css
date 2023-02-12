@@ -4275,6 +4275,8 @@ input, select, textarea {
 		}
 		.content .button {
 			margin: 0;
+			height: 2rem;
+			line-height: 2rem;
 		}
 
 		/* Spotlight */
