@@ -3921,6 +3921,8 @@ input, select, textarea {
 		display: none;
 	}
 
+/* Small */
+
 	@media screen and (max-width: 736px) {
 
 		/* Basic */
@@ -3981,15 +3983,18 @@ input, select, textarea {
 
 			.spotlight {
 				box-shadow: 0 0.125em 0.5em 0 rgba(0, 0, 0, 0.25);
+				min-height: 100vh;
 			}
-
 				.spotlight .image.main {
-					max-height: 60vh;
+					display: block;
+					margin: 0;
+					max-height: 30vh;
+					overflow: hidden;
 				}
-
 				.spotlight .content {
 					border-top-width: 0.2em !important;
-					padding: 3.25em 1.5em 1.25em 1.5em !important;
+					padding: 7em 1.5em 1.25em 1.5em !important;
+					min-height: 70vh !important;
 				}
 
 		/* Wrapper */
