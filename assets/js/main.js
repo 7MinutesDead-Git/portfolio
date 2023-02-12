@@ -6,7 +6,7 @@ let reCAPTCHA
 const spotlights = document.querySelectorAll('.spotlight')
 const banner = document.querySelector('#banner')
 const isMobile = () => {
-	return window.innerHeight < window.screen.height
+	return window.matchMedia('(max-width: 736px)').matches
 };
 // vh unit doesn't take mobile browser UI elements into account.
 // In this case we'll dynamically set the height of these elements based on
@@ -18,6 +18,12 @@ function setVhStyledElements() {
 			element.style.maxHeight = `calc(100vh - ${vh}px)`
 		}
 		banner.style.minHeight = `calc(100vh - ${vh}px)`
+	}
+	else {
+		for (const element of spotlights) {
+			element.style.maxHeight = '100vh'
+		}
+		banner.style.minHeight = '100vh'
 	}
 }
 
