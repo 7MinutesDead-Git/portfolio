@@ -4252,11 +4252,26 @@ input, select, textarea {
 			margin: 0 0 1.5rem 0
 		}
 
-		/* Spotlight */
+		p {
+			margin: 0 0 1.5rem 0;
+			line-height: 1.6em;
+		}
+		.image.main {
+			max-height: 30vh;
+		}
+		/* Hide paragraphs on very small displays for limited space */
+		#blurb p:nth-child(2),
+		#app-one p:nth-child(3) {
+			display: none;
+		}
+		.goto-next {
+			height: 6rem;
+		}
+		.content .button {
+			margin: 1em 0 0 0;
+		}
 
-			.spotlight .image.main {
-				max-height: 50vh;
-			}
+		/* Spotlight */
 
 			.spotlight .content {
 				padding: 3em 1.25em 1em 1.25em !important;
