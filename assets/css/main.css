@@ -666,14 +666,6 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 980px) {
-
-			.container {
-				width: 100% !important;
-			}
-
-		}
-
 /* Row */
 
 	.row {
