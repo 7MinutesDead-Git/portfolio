@@ -4271,6 +4271,7 @@ input, select, textarea {
 		}
 		.goto-next {
 			height: 4rem;
+			margin: 0 0 3em -5em;
 		}
 		.content .button {
 			margin: 0;
