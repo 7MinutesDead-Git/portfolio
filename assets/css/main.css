@@ -3601,10 +3601,8 @@ input, select, textarea {
 	filter: none;
 }
 /* Resume section. */
-#skills {
-	max-height: min(100vh, fit-content);
-}
 #skills.resume-bits {
+	position: relative;
 	min-height: 100vh;
 }
 #skills.resume-bits p {
@@ -3628,9 +3626,6 @@ input, select, textarea {
 	#skills header.major:hover:after {
 		max-width: 11%;
 	}
-#skills .goto-next {
-	position: relative;
-}
 #skills.wrapper {
 	padding-top: 3em;
 }
